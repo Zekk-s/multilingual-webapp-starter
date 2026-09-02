@@ -1,0 +1,8 @@
+{
+  "home": {
+    "title": "Çok Dilli Web Uygulaması Başlangıcı",
+    "subtitle": "Next.js 14 + next-intl referansı. Yerel-farkında yönlendirme, SEO-hazır meta veri, CI-testli dil kapsamı.",
+    "footnote": "Yukarıdan dil değiştirin. Yeni dilleri src/i18n.ts ve src/messages/<locale>/common.json içinde ekleyin."
+  },
+  "nav": { "home": "Anasayfa" }
+}

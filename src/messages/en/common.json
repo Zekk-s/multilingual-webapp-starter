@@ -1,0 +1,8 @@
+{
+  "home": {
+    "title": "Multilingual Web App Starter",
+    "subtitle": "Next.js 14 + next-intl reference. Locale-aware routing, SEO-ready metadata, CI-tested locale coverage.",
+    "footnote": "Switch language above. Add new locales in src/i18n.ts and src/messages/<locale>/common.json."
+  },
+  "nav": { "home": "Home" }
+}

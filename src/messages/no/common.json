@@ -1,0 +1,8 @@
+{
+  "home": {
+    "title": "Flerspråklig webapp-starter",
+    "subtitle": "Next.js 14 + next-intl referanse. Språk-bevisst ruting, SEO-klar metadata, CI-testet språkdekning.",
+    "footnote": "Bytt språk over. Legg til nye språk i src/i18n.ts og src/messages/<locale>/common.json."
+  },
+  "nav": { "home": "Hjem" }
+}

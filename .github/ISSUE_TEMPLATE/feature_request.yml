@@ -1,0 +1,24 @@
+name: Feature request
+description: Propose a new locale, helper, or framework upgrade
+title: "[feat] "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: motivation
+    attributes:
+      label: Motivation
+      description: "Why is this needed?"
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change
+    validations:
+      required: true
+  - type: textarea
+    id: alt
+    attributes:
+      label: Alternatives considered
+    validations:
+      required: false
