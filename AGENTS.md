@@ -1,42 +1,31 @@
-# AGENTS.md — multilingual-webapp-starter
+# AGENTS.md
 
-## Purpose
+Scaffold. Describe the files that are here. The GitHub description is "Scaffold (initializing)".
 
-Reference repo for shipping locale-aware Next.js apps. Keep it boring, predictable, and CI-gated.
+## What exists
 
-## Hard rules
+- Locales `en`, `no`, and `tr` are the array in `src/i18n.ts`. Copy is `src/messages/<locale>/common.json`.
+- `npm run validate:i18n` runs `scripts/check-locales.mjs`. It exits 1 when a locale's keys differ from `en/common.json`. On this tree it passes.
+- `tsconfig.json` has `"strict": true`. `npm run type-check` passes.
+- `src/app/[locale]/page.tsx` reads `home` through `useTranslations`. `LocaleSwitcher` prints the locale codes. `nav.home` is unused.
+- `home.footnote` includes `<locale>`. next-intl reports `UNCLOSED_TAG`, and the dev page shows the key `home.footnote`.
+- `.env.example` is not imported by `src/`.
+- `.github/CODEOWNERS` is `* @Zekiog`.
 
-- **Never** commit secrets or API keys. `.env.example` only, placeholder values.
-- **Never** bypass `pnpm validate:i18n`. Locale parity is a hard CI gate.
-- **Never** introduce a new locale without updating `src/i18n.ts` AND adding `src/messages/<locale>/common.json` with the same keys as `en/`.
-- **Never** disable ESLint or TypeScript. `strict: true` stays.
-- All copy goes through `useTranslations` — no hardcoded user-facing strings.
+## What fails on this tree
 
-## Workflow
+- `npm run lint` exits 1. There is no ESLint config, so `next lint` prompts to create one.
+- `npm test` exits 1. Vitest is a dependency and there are no test files.
+- `npm run build` exits 1 while prerendering `/en`, `/no`, and `/tr`.
 
-1. Branch from `main`: `git switch -c feat/<scope>`.
-2. Make the change.
-3. `pnpm dev` to smoke-test locally on :5175.
-4. `pnpm test && pnpm validate:i18n && pnpm build` before requesting review.
-5. Open PR using `.github/PULL_REQUEST_TEMPLATE.md`.
+`eslint`, `eslint-config-next`, `vitest`, `@vitejs/plugin-react`, and `happy-dom` are in `package.json` only. They are not imported from `src/` or `scripts/`.
 
-## Code style
+## Workflow file
 
-- TypeScript strict. Prefer `import type`.
-- Server Components by default; mark client islands with `"use client"` at the top.
-- Locale codes are ISO-639-1 (`en`, `no`, `tr`).
-- Use `next-intl`'s `useTranslations` and `getTranslations` — do not call `messages/<locale>` directly from app code.
+`.github/workflows/ci.yml` calls those npm scripts on pull requests and on pushes to `main`, with Node 20 and `cache: npm`. There is no lockfile in the repo. Rulesets are empty. Branch protection was not readable here (403). A red script in that file is not, by itself, proof that GitHub blocks the merge.
 
-## Testing floor
+## Secrets
 
-- Vitest covers helper logic and `validate:i18n` script logic.
-- No E2E in this repo by default — add Playwright per-app.
+Do not commit secrets. `.gitignore` ignores `.env`, `.env.local`, `.env.development.local`, and `.env.production.local`. `.env.example` is placeholders.
 
-## File ownership
-
-`.github/CODEOWNERS` routes every path to `@Zekiog`.
-
-## Things to avoid
-
-- Mixing `next/router` and `next/navigation` — pick one (we use `next/navigation`).
-- Storing translations in DB at the framework layer — this repo is static-message only.
+A new locale needs a new code in `src/i18n.ts` and a `common.json` with the same keys as `en`. The parity script checks keys only.

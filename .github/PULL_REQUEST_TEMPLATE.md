@@ -1,19 +1,7 @@
 ## Summary
 
-<!-- One-paragraph description -->
+What changed.
 
-## Type of change
+## Checks
 
-- [ ] New locale added (parity verified)
-- [ ] Bug fix
-- [ ] Refactor / cleanup
-- [ ] CI / tooling
-- [ ] Documentation
-
-## Checklist
-
-- [ ] `pnpm validate:i18n` passes locally
-- [ ] `pnpm test` passes
-- [ ] `pnpm build` passes
-- [ ] Added/updated tests where applicable
-- [ ] AGENTS.md updated if rules changed
+List the commands you ran and the result. On this tree, `npm run validate:i18n` and `npm run type-check` pass. `npm run lint`, `npm test`, and `npm run build` fail.

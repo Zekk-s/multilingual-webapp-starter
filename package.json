@@ -2,7 +2,7 @@
   "name": "@zekk-s/multilingual-webapp-starter",
   "version": "0.1.0",
   "private": false,
-  "description": "Next.js 14 + next-intl starter with locale-aware routing, SEO-ready metadata, and CI.",
+  "description": "Next.js 14 and next-intl scaffold with en, no, and tr message files.",
   "license": "MIT",
   "scripts": {
     "dev": "next dev -p 5175",
