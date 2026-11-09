@@ -1,20 +1,20 @@
 name: Bug report
-description: Report a defect or regression in the starter
+description: Report a failure in this repository
 title: "[bug] "
 labels: ["bug"]
 body:
   - type: input
     id: locale
     attributes:
-      label: Affected locale
-      description: "e.g. en, no, tr"
+      label: Locale
+      description: "en, no, or tr, if the failure depends on one"
     validations:
       required: false
   - type: textarea
     id: repro
     attributes:
       label: Steps to reproduce
-      description: "Exact commands or clicks"
+      description: "Commands or pages"
     validations:
       required: true
   - type: textarea

@@ -1,5 +1,5 @@
 name: Feature request
-description: Propose a new locale, helper, or framework upgrade
+description: Suggest a change to this repository
 title: "[feat] "
 labels: ["enhancement"]
 body:
