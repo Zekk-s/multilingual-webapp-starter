@@ -1,8 +1,112 @@
 {
-  "home": {
-    "title": "Multilingual Web App Starter",
-    "subtitle": "Next.js 14 + next-intl reference. Locale-aware routing, SEO-ready metadata, CI-tested locale coverage.",
-    "footnote": "Switch language above. Add new locales in src/i18n.ts and src/messages/<locale>/common.json."
+  "meta": {
+    "title": "Locale desk",
+    "description": "The first service in this scaffold: a locale-prefixed page for en, no, and tr, and the pieces under that service."
   },
-  "nav": { "home": "Home" }
+  "nav": {
+    "home": "Home",
+    "sections": "On this page",
+    "service": "Service",
+    "repos": "Repos"
+  },
+  "switcher": { "label": "Language" },
+  "desk": {
+    "kicker": "Service 01",
+    "title": "Locale desk",
+    "lede": "This repository can take a request, choose en, no, or tr, and return one page. That is the first service. The rows under it are the pieces of that path, including the ones that do not run.",
+    "run": "Local command is npm run dev, on port 5175. / sends you to /en."
+  },
+  "path": {
+    "label": "Request path",
+    "request": "A request arrives",
+    "middleware": "middleware.ts forces a locale prefix",
+    "locale": "The [locale] layout checks the code",
+    "messages": "common.json for that locale is loaded",
+    "html": "The page is HTML"
+  },
+  "status": {
+    "live": "Running",
+    "partial": "Partial",
+    "off": "Not running"
+  },
+  "index": {
+    "kicker": "Under this service",
+    "title": "What sits underneath",
+    "intro": "Statuses are from a local run on 12 November 2026, Node 22. The GitHub Actions workflow was not executed for that run."
+  },
+  "svc": {
+    "routing": {
+      "name": "Prefixed routing",
+      "summary": "src/middleware.ts sets localePrefix to always. A visit to / redirects to /en. /fr is not a locale in src/i18n.ts, so the layout calls notFound."
+    },
+    "messages": {
+      "name": "Message catalogs",
+      "summary": "en, no, and tr each have src/messages, then the locale, then common.json. The parity script requires the same keys in all three. Strings here do not use angle brackets, which next-intl would read as tags."
+    },
+    "switcher": {
+      "name": "Locale switcher",
+      "summary": "src/components/LocaleSwitcher.tsx is a client component. It reads the first path segment with next/navigation and pushes the same rest of the path under the other locale. The labels are the locale codes."
+    },
+    "parity": {
+      "name": "Key parity",
+      "summary": "npm run validate:i18n runs scripts/check-locales.mjs. It exits 1 when any locale is missing a key from en, or has a key en does not have."
+    },
+    "types": {
+      "name": "Type check",
+      "summary": "tsconfig.json has strict set to true. npm run type-check runs tsc --noEmit."
+    },
+    "lint": {
+      "name": "Lint",
+      "summary": "package.json has a lint script, and eslint plus eslint-config-next are dependencies. There is no ESLint config in the repo, so next lint asks to create one and exits 1. Nothing under src imports eslint."
+    },
+    "tests": {
+      "name": "Unit tests",
+      "summary": "npm test runs Vitest on src/lib/catalog.test.ts. That file checks the service statuses and that the five repo names are unique. It does not render the page. There is no Vitest config. @vitejs/plugin-react and happy-dom are dependencies and are not imported."
+    },
+    "build": {
+      "name": "Production build",
+      "summary": "npm run build prerenders /en, /no, and /tr. The page calls setRequestLocale before getTranslations. Without that call, next-intl reads headers during static generation and the build stops."
+    },
+    "metadata": {
+      "name": "Document metadata",
+      "summary": "The page sets a title and a description from the message catalog. NEXT_PUBLIC_SITE_URL is not read. There is no canonical URL and no Open Graph image."
+    },
+    "ci": {
+      "name": "CI workflow",
+      "summary": ".github/workflows/ci.yml runs on pull requests and on pushes to main. It sets up Node 20 with an npm cache, then runs type-check, lint, validate:i18n, test, and build. No lockfile is committed. Lint still fails. Repository rulesets are empty, and branch protection was not readable, so this file is not a confirmed merge block."
+    },
+    "env": {
+      "name": "Env placeholders",
+      "summary": ".env.example defines NEXT_PUBLIC_SITE_URL and DEFAULT_LOCALE. No file under src reads them. The default locale is the string en in src/i18n.ts."
+    }
+  },
+  "picks": {
+    "kicker": "Five repos",
+    "title": "What was worth using",
+    "intro": "These five are the class leaders that touch this scaffold: the i18n plugin, the MCP reference servers, an agent-docs server, GitHub's MCP server, and a component kit. Star counts are from the GitHub API on 12 November 2026. Only next-intl is installed.",
+    "stars": "GitHub stars",
+    "inRepo": "Installed",
+    "notInstalled": "Not installed"
+  },
+  "pick": {
+    "nextIntl": {
+      "why": "The i18n plugin this app already runs. next.config.js points it at src/i18n.ts, and package.json pins 3.26.0. The locale desk is built on it, so it stays."
+    },
+    "mcpServers": {
+      "why": "The reference MCP servers. They are the standard examples of how an agent calls tools. This site does not start them. A Next.js page is not an MCP host."
+    },
+    "context7": {
+      "why": "Documentation for coding agents, so answers about Next.js and next-intl stay current. It is not a dependency of this site, and the page does not call it."
+    },
+    "githubMcp": {
+      "why": "GitHub's official MCP server for repositories, issues, and pull requests. It is not a dependency. The workflow in .github is Actions YAML, not this server."
+    },
+    "shadcn": {
+      "why": "The leading set of components you copy into a project. It was not added. This page is server-rendered markup plus one client switcher. A second design system would have nothing else using it."
+    }
+  },
+  "foot": {
+    "license": "MIT. Copyright 2026 Zekk-s.",
+    "limits": "This page describes the files in the repository. It is not a hosted product. The GitHub description is still Scaffold (initializing), and GitHub Pages is off."
+  }
 }

@@ -1,8 +1,112 @@
 {
-  "home": {
-    "title": "Flerspråklig webapp-starter",
-    "subtitle": "Next.js 14 + next-intl referanse. Språk-bevisst ruting, SEO-klar metadata, CI-testet språkdekning.",
-    "footnote": "Bytt språk over. Legg til nye språk i src/i18n.ts og src/messages/<locale>/common.json."
+  "meta": {
+    "title": "Språkpult",
+    "description": "Første tjeneste i dette stillaset: en side med språkprefiks for en, no og tr, og delene under den tjenesten."
   },
-  "nav": { "home": "Hjem" }
+  "nav": {
+    "home": "Hjem",
+    "sections": "På denne siden",
+    "service": "Tjeneste",
+    "repos": "Repoer"
+  },
+  "switcher": { "label": "Språk" },
+  "desk": {
+    "kicker": "Tjeneste 01",
+    "title": "Språkpult",
+    "lede": "Dette repositoriet kan ta en forespørsel, velge en, no eller tr, og svare med én side. Det er den første tjenesten. Radene under er delene i den stien, også de som ikke kjører.",
+    "run": "Lokal kommando er npm run dev, på port 5175. / sender deg til /en."
+  },
+  "path": {
+    "label": "Forespørselssti",
+    "request": "En forespørsel kommer inn",
+    "middleware": "middleware.ts tvinger et språkprefiks",
+    "locale": "Layouten for [locale] sjekker koden",
+    "messages": "common.json for språket lastes",
+    "html": "Siden er HTML"
+  },
+  "status": {
+    "live": "Kjører",
+    "partial": "Delvis",
+    "off": "Kjører ikke"
+  },
+  "index": {
+    "kicker": "Under denne tjenesten",
+    "title": "Det som ligger under",
+    "intro": "Statusene er fra en lokal kjøring 12. november 2026, Node 22. GitHub Actions-arbeidsflyten ble ikke kjørt for den runden."
+  },
+  "svc": {
+    "routing": {
+      "name": "Prefikset ruting",
+      "summary": "src/middleware.ts setter localePrefix til always. Et besøk på / videresendes til /en. /fr er ikke et språk i src/i18n.ts, så layouten kaller notFound."
+    },
+    "messages": {
+      "name": "Meldingskataloger",
+      "summary": "en, no og tr har hver sin src/messages, deretter språkkoden, deretter common.json. Paritetsskriptet krever de samme nøklene i alle tre. Tekstene her bruker ikke vinkelparenteser, som next-intl ville lest som tagger."
+    },
+    "switcher": {
+      "name": "Språkvelger",
+      "summary": "src/components/LocaleSwitcher.tsx er en klientkomponent. Den leser første sti-ledd med next/navigation og skyver resten av stien under det andre språket. Etikettene er språkkodene."
+    },
+    "parity": {
+      "name": "Nøkkelparitet",
+      "summary": "npm run validate:i18n kjører scripts/check-locales.mjs. Det avslutter med kode 1 når et språk mangler en nøkkel fra en, eller har en nøkkel en ikke har."
+    },
+    "types": {
+      "name": "Typesjekk",
+      "summary": "tsconfig.json har strict satt til true. npm run type-check kjører tsc --noEmit."
+    },
+    "lint": {
+      "name": "Lint",
+      "summary": "package.json har et lint-skript, og eslint og eslint-config-next er avhengigheter. Det finnes ingen ESLint-konfigurasjon i repositoriet, så next lint ber om å opprette en og avslutter med kode 1. Ingenting under src importerer eslint."
+    },
+    "tests": {
+      "name": "Enhetstester",
+      "summary": "npm test kjører Vitest på src/lib/catalog.test.ts. Filen sjekker tjenestestatusene og at de fem reponavnene er unike. Den rendrer ikke siden. Det finnes ingen Vitest-konfigurasjon. @vitejs/plugin-react og happy-dom er avhengigheter og blir ikke importert."
+    },
+    "build": {
+      "name": "Produksjonsbygg",
+      "summary": "npm run build forhåndsrendrer /en, /no og /tr. Siden kaller setRequestLocale før getTranslations. Uten det kallet leser next-intl headers under statisk generering, og bygget stopper."
+    },
+    "metadata": {
+      "name": "Dokumentmetadata",
+      "summary": "Siden setter en tittel og en beskrivelse fra meldingskatalogen. NEXT_PUBLIC_SITE_URL blir ikke lest. Det finnes ingen kanonisk URL og ingen Open Graph-bilde."
+    },
+    "ci": {
+      "name": "CI-arbeidsflyt",
+      "summary": ".github/workflows/ci.yml kjører på pull requests og på push til main. Den setter opp Node 20 med npm-cache, og kjører deretter type-check, lint, validate:i18n, test og build. Ingen lockfil er committet. Lint feiler fortsatt. Regler for repositoriet er tomme, og branch protection var ikke lesbar, så filen er ikke en bekreftet fletteblokkering."
+    },
+    "env": {
+      "name": "Miljøplassholdere",
+      "summary": ".env.example definerer NEXT_PUBLIC_SITE_URL og DEFAULT_LOCALE. Ingen fil under src leser dem. Standardspråket er strengen en i src/i18n.ts."
+    }
+  },
+  "picks": {
+    "kicker": "Fem repoer",
+    "title": "Det som var verdt å bruke",
+    "intro": "Disse fem er de ledende i klassene som berører dette stillaset: i18n-pluginen, referanse-serverne for MCP, en dokumentasjonsserver for agenter, GitHubs MCP-server og et komponentsett. Stjernetallene er fra GitHub-API-et 12. november 2026. Bare next-intl er installert.",
+    "stars": "GitHub-stjerner",
+    "inRepo": "Installert",
+    "notInstalled": "Ikke installert"
+  },
+  "pick": {
+    "nextIntl": {
+      "why": "i18n-pluginen appen allerede kjører. next.config.js peker den til src/i18n.ts, og package.json fester 3.26.0. Språkpulten er bygget på den, så den blir."
+    },
+    "mcpServers": {
+      "why": "Referanse-serverne for MCP. De er standardeksemplene på hvordan en agent kaller verktøy. Dette nettstedet starter dem ikke. En Next.js-side er ikke en MCP-vert."
+    },
+    "context7": {
+      "why": "Dokumentasjon for kodeagenter, så svar om Next.js og next-intl holder seg aktuelle. Den er ikke en avhengighet av nettstedet, og siden kaller den ikke."
+    },
+    "githubMcp": {
+      "why": "GitHubs offisielle MCP-server for repositorier, issues og pull requests. Den er ikke en avhengighet. Arbeidsflyten i .github er Actions-YAML, ikke denne serveren."
+    },
+    "shadcn": {
+      "why": "Det ledende settet med komponenter du kopierer inn i et prosjekt. Det ble ikke lagt til. Denne siden er server-rendret markup pluss én klientvelger. Et annet designsystem ville ikke hatt noe annet som brukte det."
+    }
+  },
+  "foot": {
+    "license": "MIT. Opphavsrett 2026 Zekk-s.",
+    "limits": "Denne siden beskriver filene i repositoriet. Den er ikke et driftet produkt. GitHub-beskrivelsen er fortsatt Scaffold (initializing), og GitHub Pages er av."
+  }
 }

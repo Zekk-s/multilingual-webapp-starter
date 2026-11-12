@@ -1,8 +1,112 @@
 {
-  "home": {
-    "title": "Çok Dilli Web Uygulaması Başlangıcı",
-    "subtitle": "Next.js 14 + next-intl referansı. Yerel-farkında yönlendirme, SEO-hazır meta veri, CI-testli dil kapsamı.",
-    "footnote": "Yukarıdan dil değiştirin. Yeni dilleri src/i18n.ts ve src/messages/<locale>/common.json içinde ekleyin."
+  "meta": {
+    "title": "Dil masası",
+    "description": "Bu iskeletin ilk hizmeti: en, no ve tr için dil önekli bir sayfa ve bu hizmetin altındaki parçalar."
   },
-  "nav": { "home": "Anasayfa" }
+  "nav": {
+    "home": "Ana sayfa",
+    "sections": "Bu sayfada",
+    "service": "Hizmet",
+    "repos": "Repolar"
+  },
+  "switcher": { "label": "Dil" },
+  "desk": {
+    "kicker": "Hizmet 01",
+    "title": "Dil masası",
+    "lede": "Bu depo bir isteği alır, en, no veya tr seçer ve tek bir sayfa döner. İlk hizmet budur. Alttaki satırlar bu yolun parçalarıdır, çalışmayanlar da dahil.",
+    "run": "Yerel komut npm run dev, port 5175. / sizi /en adresine gönderir."
+  },
+  "path": {
+    "label": "İstek yolu",
+    "request": "Bir istek gelir",
+    "middleware": "middleware.ts dil önekini zorunlu kılar",
+    "locale": "[locale] yerleşimi kodu denetler",
+    "messages": "O dilin common.json dosyası yüklenir",
+    "html": "Sayfa HTML olur"
+  },
+  "status": {
+    "live": "Çalışıyor",
+    "partial": "Kısmi",
+    "off": "Çalışmıyor"
+  },
+  "index": {
+    "kicker": "Bu hizmetin altında",
+    "title": "Altında duranlar",
+    "intro": "Durumlar 12 Kasım 2026 tarihli yerel bir çalıştırmadan, Node 22. GitHub Actions iş akışı o çalıştırma için işletilmedi."
+  },
+  "svc": {
+    "routing": {
+      "name": "Önekli yönlendirme",
+      "summary": "src/middleware.ts localePrefix değerini always yapar. / adresi /en adresine yönlenir. /fr, src/i18n.ts içindeki dillerden biri değildir, bu yüzden yerleşim notFound çağırır."
+    },
+    "messages": {
+      "name": "Mesaj katalogları",
+      "summary": "en, no ve tr için ayrı src/messages, sonra dil kodu, sonra common.json vardır. Parite betiği üçünde de aynı anahtarları ister. Buradaki metinlerde açılı ayraç yok. next-intl onları etiket sanır."
+    },
+    "switcher": {
+      "name": "Dil seçici",
+      "summary": "src/components/LocaleSwitcher.tsx bir istemci bileşenidir. next/navigation ile yolun ilk parçasını okur ve yolun kalanını diğer dilin altına iter. Etiketler dil kodlarıdır."
+    },
+    "parity": {
+      "name": "Anahtar paritesi",
+      "summary": "npm run validate:i18n, scripts/check-locales.mjs dosyasını çalıştırır. Bir dilde en içindeki bir anahtar yoksa veya en'de olmayan bir anahtar varsa 1 ile çıkar."
+    },
+    "types": {
+      "name": "Tip denetimi",
+      "summary": "tsconfig.json içinde strict true. npm run type-check, tsc --noEmit çalıştırır."
+    },
+    "lint": {
+      "name": "Lint",
+      "summary": "package.json bir lint betiği taşır. eslint ve eslint-config-next bağımlılıktır. Depoda ESLint yapılandırması yoktur, bu yüzden next lint bir tane oluşturmayı sorar ve 1 ile çıkar. src altında eslint içe aktaran bir dosya yok."
+    },
+    "tests": {
+      "name": "Birim testleri",
+      "summary": "npm test, Vitest'i src/lib/catalog.test.ts üzerinde çalıştırır. Dosya hizmet durumlarını ve beş repo adının tekil olduğunu denetler. Sayfayı çizmez. Vitest yapılandırması yoktur. @vitejs/plugin-react ve happy-dom bağımlılıktır ve içe aktarılmaz."
+    },
+    "build": {
+      "name": "Üretim derlemesi",
+      "summary": "npm run build, /en, /no ve /tr sayfalarını önceden üretir. Sayfa, getTranslations öncesinde setRequestLocale çağırır. Bu çağrı olmazsa next-intl statik üretim sırasında headers okur ve derleme durur."
+    },
+    "metadata": {
+      "name": "Belge üstverisi",
+      "summary": "Sayfa, mesaj kataloğundan bir başlık ve bir açıklama yazar. NEXT_PUBLIC_SITE_URL okunmaz. Kanonik adres yok, Open Graph görseli yok."
+    },
+    "ci": {
+      "name": "CI iş akışı",
+      "summary": ".github/workflows/ci.yml çekme isteklerinde ve main'e itişlerde çalışır. Node 20 ve npm önbelleği kurar, sonra type-check, lint, validate:i18n, test ve build çalıştırır. Kilit dosyası işlenmemiştir. Lint hâlâ düşer. Depo kural kümeleri boştur ve dal koruması okunamadı, bu yüzden dosya doğrulanmış bir birleştirme engeli değildir."
+    },
+    "env": {
+      "name": "Ortam yer tutucuları",
+      "summary": ".env.example, NEXT_PUBLIC_SITE_URL ve DEFAULT_LOCALE tanımlar. src altındaki hiçbir dosya onları okumaz. Varsayılan dil, src/i18n.ts içindeki en dizgisidir."
+    }
+  },
+  "picks": {
+    "kicker": "Beş repo",
+    "title": "İşe yarayanlar",
+    "intro": "Bu beş, iskelete değen sınıfların önde gelenleridir: i18n eklentisi, MCP başvuru sunucuları, ajan belgeleri sunucusu, GitHub'ın MCP sunucusu ve bir bileşen takımı. Yıldız sayıları 12 Kasım 2026 GitHub API kaydıdır. Yalnızca next-intl kurulu.",
+    "stars": "GitHub yıldızı",
+    "inRepo": "Kurulu",
+    "notInstalled": "Kurulu değil"
+  },
+  "pick": {
+    "nextIntl": {
+      "why": "Uygulamanın hâlihazırda çalıştırdığı i18n eklentisi. next.config.js onu src/i18n.ts dosyasına bağlar, package.json 3.26.0 sürümünü sabitler. Dil masası onun üstüne kurulu, bu yüzden duruyor."
+    },
+    "mcpServers": {
+      "why": "MCP başvuru sunucuları. Bir ajanın araçları nasıl çağırdığının standart örnekleridir. Bu site onları başlatmaz. Bir Next.js sayfası MCP sunucusu değildir."
+    },
+    "context7": {
+      "why": "Kod ajanları için belgeler, böylece Next.js ve next-intl yanıtları güncel kalır. Sitenin bağımlılığı değildir ve sayfa onu çağırmaz."
+    },
+    "githubMcp": {
+      "why": "Depolar, issue'lar ve çekme istekleri için GitHub'ın resmi MCP sunucusu. Bağımlılık değildir. .github içindeki iş akışı Actions YAML'idir, bu sunucu değil."
+    },
+    "shadcn": {
+      "why": "Projeye kopyalanan bileşenlerin önde gelen takımı. Eklenmedi. Bu sayfa sunucuda üretilen işaretleme ve tek bir istemci seçicisidir. İkinci bir tasarım sistemini kullanacak başka bir şey yok."
+    }
+  },
+  "foot": {
+    "license": "MIT. Telif 2026 Zekk-s.",
+    "limits": "Bu sayfa depodaki dosyaları anlatır. Barındırılan bir ürün değildir. GitHub açıklaması hâlâ Scaffold (initializing) ve GitHub Pages kapalı."
+  }
 }
