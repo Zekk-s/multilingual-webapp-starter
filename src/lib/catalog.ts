@@ -21,7 +21,7 @@ export const serviceStatus: Record<ServiceId, Status> = {
   switcher: "live",
   parity: "live",
   types: "live",
-  lint: "off",
+  lint: "live",
   tests: "partial",
   build: "live",
   metadata: "partial",

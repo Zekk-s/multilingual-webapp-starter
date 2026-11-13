@@ -32,7 +32,7 @@
   "index": {
     "kicker": "Under this service",
     "title": "What sits underneath",
-    "intro": "Statuses are from a local run on 12 November 2026, Node 22. The GitHub Actions workflow was not executed for that run."
+    "intro": "Statuses are from a local run on 13 November 2026, Node 22. The GitHub Actions run for this change is the check on the pull request."
   },
   "svc": {
     "routing": {
@@ -57,7 +57,7 @@
     },
     "lint": {
       "name": "Lint",
-      "summary": "package.json has a lint script, and eslint plus eslint-config-next are dependencies. There is no ESLint config in the repo, so next lint asks to create one and exits 1. Nothing under src imports eslint."
+      "summary": "npm run lint runs next lint. .eslintrc.json extends next/core-web-vitals, using the eslint and eslint-config-next versions already in package.json."
     },
     "tests": {
       "name": "Unit tests",
@@ -73,7 +73,7 @@
     },
     "ci": {
       "name": "CI workflow",
-      "summary": ".github/workflows/ci.yml runs on pull requests and on pushes to main. It sets up Node 20 with an npm cache, then runs type-check, lint, validate:i18n, test, and build. No lockfile is committed. Lint still fails. Repository rulesets are empty, and branch protection was not readable, so this file is not a confirmed merge block."
+      "summary": ".github/workflows/ci.yml runs on pull requests and on pushes to main. It sets up Node 20, caches from package-lock.json, then runs npm ci, type-check, lint, validate:i18n, test, and build. Repository rulesets are empty, and branch protection was not readable, so a green job is not proof that GitHub blocks a merge."
     },
     "env": {
       "name": "Env placeholders",

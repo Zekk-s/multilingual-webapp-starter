@@ -16,9 +16,9 @@ Scaffold. The home page is the locale desk. Describe the files that are here. Th
 
 ## What is partial or not running
 
-- `npm run lint` exits 1. There is no ESLint config.
+- `npm run lint` uses `.eslintrc.json` (`next/core-web-vitals`).
 - `npm test` runs `src/lib/catalog.test.ts` only. `@vitejs/plugin-react` and `happy-dom` are not imported.
-- `.github/workflows/ci.yml` calls the npm scripts on pull requests and on pushes to `main`, with Node 20 and `cache: npm`. There is no lockfile. Rulesets are empty. Branch protection was not readable here (403).
+- `.github/workflows/ci.yml` runs `npm ci` from `package-lock.json` on pull requests and on pushes to `main`, with Node 20 and `cache: npm`. Rulesets are empty. Branch protection was not readable here (403). A green job is not proof of a merge block.
 
 ## Secrets
 

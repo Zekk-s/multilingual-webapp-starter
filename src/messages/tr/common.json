@@ -32,7 +32,7 @@
   "index": {
     "kicker": "Bu hizmetin altında",
     "title": "Altında duranlar",
-    "intro": "Durumlar 12 Kasım 2026 tarihli yerel bir çalıştırmadan, Node 22. GitHub Actions iş akışı o çalıştırma için işletilmedi."
+    "intro": "Durumlar 13 Kasım 2026 tarihli yerel bir çalıştırmadan, Node 22. Bu değişikliğin GitHub Actions çalıştırması, çekme isteğindeki denetimdir."
   },
   "svc": {
     "routing": {
@@ -57,7 +57,7 @@
     },
     "lint": {
       "name": "Lint",
-      "summary": "package.json bir lint betiği taşır. eslint ve eslint-config-next bağımlılıktır. Depoda ESLint yapılandırması yoktur, bu yüzden next lint bir tane oluşturmayı sorar ve 1 ile çıkar. src altında eslint içe aktaran bir dosya yok."
+      "summary": "npm run lint, next lint çalıştırır. .eslintrc.json, package.json içinde zaten bulunan eslint ve eslint-config-next sürümleriyle next/core-web-vitals ayarını kullanır."
     },
     "tests": {
       "name": "Birim testleri",
@@ -73,7 +73,7 @@
     },
     "ci": {
       "name": "CI iş akışı",
-      "summary": ".github/workflows/ci.yml çekme isteklerinde ve main'e itişlerde çalışır. Node 20 ve npm önbelleği kurar, sonra type-check, lint, validate:i18n, test ve build çalıştırır. Kilit dosyası işlenmemiştir. Lint hâlâ düşer. Depo kural kümeleri boştur ve dal koruması okunamadı, bu yüzden dosya doğrulanmış bir birleştirme engeli değildir."
+      "summary": ".github/workflows/ci.yml çekme isteklerinde ve main'e itişlerde çalışır. Node 20 kurar, package-lock.json üzerinden önbellekler, sonra npm ci, type-check, lint, validate:i18n, test ve build çalıştırır. Depo kural kümeleri boştur ve dal koruması okunamadı, bu yüzden yeşil bir iş GitHub'ın birleştirmeyi engellediğinin kanıtı değildir."
     },
     "env": {
       "name": "Ortam yer tutucuları",

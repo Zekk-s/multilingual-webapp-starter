@@ -18,10 +18,10 @@ The home page is the first service this repo can run: a locale-prefixed page for
 - User-facing sentences go through `next-intl`. The switcher labels are the locale codes themselves.
 - Do not put `<tags>` in a message string. next-intl treats them as rich text and the page shows the key instead of the sentence.
 - Call `setRequestLocale` in `src/app/[locale]/page.tsx` before `getTranslations`. Without it, `npm run build` fails while prerendering `/en`, `/no`, and `/tr`.
-- Change a status in `catalog.ts` only after you run the command that status describes. `lint` has no ESLint config and exits 1. `tests` only covers `src/lib/catalog.test.ts`. `ci` is a workflow file, not proof of branch protection.
+- Change a status in `catalog.ts` only after you run the command that status describes. `npm run lint` uses `.eslintrc.json`. `tests` only covers `src/lib/catalog.test.ts`. CI installs with `npm ci` from `package-lock.json`. A green workflow is not proof of branch protection.
 - `.env.example` is not read by `src/`. Do not describe `NEXT_PUBLIC_SITE_URL` as a live site.
 - Do not add shadcn, the MCP reference servers, Context7, or the GitHub MCP server as dependencies unless the page copy and `picks` say they are installed. Today only `next-intl` is.
 
 ## Check
 
-`npm run validate:i18n`, `npm run type-check`, and `npm test`. Then `npm run dev` and open `/en`, `/no`, and `/tr`.
+`npm run validate:i18n`, `npm run type-check`, `npm run lint`, and `npm test`. Then `npm run dev` and open `/en`, `/no`, and `/tr`.

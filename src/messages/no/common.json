@@ -32,7 +32,7 @@
   "index": {
     "kicker": "Under denne tjenesten",
     "title": "Det som ligger under",
-    "intro": "Statusene er fra en lokal kjøring 12. november 2026, Node 22. GitHub Actions-arbeidsflyten ble ikke kjørt for den runden."
+    "intro": "Statusene er fra en lokal kjøring 13. november 2026, Node 22. GitHub Actions-kjøringen for denne endringen er sjekken på pull requesten."
   },
   "svc": {
     "routing": {
@@ -57,7 +57,7 @@
     },
     "lint": {
       "name": "Lint",
-      "summary": "package.json har et lint-skript, og eslint og eslint-config-next er avhengigheter. Det finnes ingen ESLint-konfigurasjon i repositoriet, så next lint ber om å opprette en og avslutter med kode 1. Ingenting under src importerer eslint."
+      "summary": "npm run lint kjører next lint. .eslintrc.json utvider next/core-web-vitals, med eslint- og eslint-config-next-versjonene som allerede står i package.json."
     },
     "tests": {
       "name": "Enhetstester",
@@ -73,7 +73,7 @@
     },
     "ci": {
       "name": "CI-arbeidsflyt",
-      "summary": ".github/workflows/ci.yml kjører på pull requests og på push til main. Den setter opp Node 20 med npm-cache, og kjører deretter type-check, lint, validate:i18n, test og build. Ingen lockfil er committet. Lint feiler fortsatt. Regler for repositoriet er tomme, og branch protection var ikke lesbar, så filen er ikke en bekreftet fletteblokkering."
+      "summary": ".github/workflows/ci.yml kjører på pull requests og på push til main. Den setter opp Node 20, cacher fra package-lock.json, og kjører deretter npm ci, type-check, lint, validate:i18n, test og build. Regler for repositoriet er tomme, og branch protection var ikke lesbar, så en grønn jobb ikke er et bevis på at GitHub blokkerer en fletting."
     },
     "env": {
       "name": "Miljøplassholdere",
