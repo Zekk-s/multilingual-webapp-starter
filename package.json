@@ -2,7 +2,7 @@
   "name": "@zekk-s/multilingual-webapp-starter",
   "version": "0.1.0",
   "private": false,
-  "description": "Next.js 14 and next-intl scaffold with en, no, and tr message files.",
+  "description": "Next.js 14 and next-intl scaffold. The home page is a locale desk for en, no, and tr.",
   "license": "MIT",
   "scripts": {
     "dev": "next dev -p 5175",

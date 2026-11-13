@@ -1,8 +1,86 @@
 {
-  "home": {
-    "title": "Multilingual Web App Starter",
-    "subtitle": "Next.js 14 + next-intl reference. Locale-aware routing, SEO-ready metadata, CI-tested locale coverage.",
-    "footnote": "Switch language above. Add new locales in src/i18n.ts and src/messages/<locale>/common.json."
+  "meta": {
+    "title": "Locale desk",
+    "description": "The first service in this scaffold: a locale-prefixed page for en, no, and tr, and the pieces under that service."
   },
-  "nav": { "home": "Home" }
+  "nav": {
+    "home": "Home",
+    "sections": "On this page",
+    "service": "Service"
+  },
+  "switcher": { "label": "Language" },
+  "desk": {
+    "kicker": "Service 01",
+    "title": "Locale desk",
+    "lede": "This repository can take a request, choose en, no, or tr, and return one page. That is the first service. The rows under it are the pieces of that path, including the ones that do not run.",
+    "run": "Local command is npm run dev, on port 5175. / sends you to /en."
+  },
+  "path": {
+    "label": "Request path",
+    "request": "A request arrives",
+    "middleware": "middleware.ts forces a locale prefix",
+    "locale": "The [locale] layout checks the code",
+    "messages": "common.json for that locale is loaded",
+    "html": "The page is HTML"
+  },
+  "status": {
+    "live": "Running",
+    "partial": "Partial",
+    "off": "Not running"
+  },
+  "index": {
+    "kicker": "Under this service",
+    "title": "What sits underneath",
+    "intro": "Statuses are from a local run on 13 November 2026, Node 22. GitHub Actions run 43369219478 passed the same scripts."
+  },
+  "svc": {
+    "routing": {
+      "name": "Prefixed routing",
+      "summary": "src/middleware.ts sets localePrefix to always. A visit to / redirects to /en. /fr is not a locale in src/i18n.ts, so the layout calls notFound."
+    },
+    "messages": {
+      "name": "Message catalogs",
+      "summary": "en, no, and tr each have src/messages, then the locale, then common.json. The parity script requires the same keys in all three. Strings here do not use angle brackets, which next-intl would read as tags."
+    },
+    "switcher": {
+      "name": "Locale switcher",
+      "summary": "src/components/LocaleSwitcher.tsx is a client component. It reads the first path segment with next/navigation and pushes the same rest of the path under the other locale. The labels are the locale codes."
+    },
+    "parity": {
+      "name": "Key parity",
+      "summary": "npm run validate:i18n runs scripts/check-locales.mjs. It exits 1 when any locale is missing a key from en, or has a key en does not have."
+    },
+    "types": {
+      "name": "Type check",
+      "summary": "tsconfig.json has strict set to true. npm run type-check runs tsc --noEmit."
+    },
+    "lint": {
+      "name": "Lint",
+      "summary": "npm run lint runs next lint. .eslintrc.json extends next/core-web-vitals, using the eslint and eslint-config-next versions already in package.json."
+    },
+    "tests": {
+      "name": "Unit tests",
+      "summary": "npm test runs Vitest on src/lib/catalog.test.ts. It checks the service statuses, that the five repo names are unique, and that message strings contain no angle brackets. It does not render the page. There is no Vitest config. @vitejs/plugin-react and happy-dom are dependencies and are not imported."
+    },
+    "build": {
+      "name": "Production build",
+      "summary": "npm run build prerenders /en, /no, and /tr. The page calls setRequestLocale before getTranslations. Without that call, next-intl reads headers during static generation and the build stops."
+    },
+    "metadata": {
+      "name": "Document metadata",
+      "summary": "The page sets a title and a description from the message catalog, and repeats both as Open Graph fields. NEXT_PUBLIC_SITE_URL is not read. There is no canonical URL and no Open Graph image."
+    },
+    "ci": {
+      "name": "CI workflow",
+      "summary": ".github/workflows/ci.yml runs on pull requests and on pushes to main. It sets up Node 20, caches from package-lock.json, then runs npm ci, type-check, lint, validate:i18n, test, and build. Run 43369219478 passed on 13 November 2026. Repository rulesets are empty, and branch protection was not readable, so that green job is not proof that GitHub blocks a merge."
+    },
+    "env": {
+      "name": "Env placeholders",
+      "summary": ".env.example defines NEXT_PUBLIC_SITE_URL and DEFAULT_LOCALE. No file under src reads them. The default locale is the string en in src/i18n.ts."
+    }
+  },
+  "foot": {
+    "license": "MIT. Copyright 2026 Zekk-s.",
+    "limits": "This page describes the files in the repository. It is not a hosted product. The GitHub description is still Scaffold (initializing), and GitHub Pages is off."
+  }
 }
