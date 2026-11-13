@@ -9,7 +9,13 @@ export async function generateMetadata({ params }: { params: { locale: string } 
   if (!locales.includes(params.locale as Locale)) return {};
   setRequestLocale(params.locale);
   const t = await getTranslations({ locale: params.locale, namespace: "meta" });
-  return { title: t("title"), description: t("description") };
+  const title = t("title");
+  const description = t("description");
+  return {
+    title,
+    description,
+    openGraph: { title, description },
+  };
 }
 
 export default async function HomePage({ params }: { params: { locale: string } }) {

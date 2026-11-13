@@ -32,7 +32,7 @@
   "index": {
     "kicker": "Under denne tjenesten",
     "title": "Det som ligger under",
-    "intro": "Statusene er fra en lokal kjøring 13. november 2026, Node 22. GitHub Actions-kjøringen for denne endringen er sjekken på pull requesten."
+    "intro": "Statusene er fra en lokal kjøring 13. november 2026, Node 22. GitHub Actions-kjøring 43369219478 bestod de samme skriptene."
   },
   "svc": {
     "routing": {
@@ -61,7 +61,7 @@
     },
     "tests": {
       "name": "Enhetstester",
-      "summary": "npm test kjører Vitest på src/lib/catalog.test.ts. Filen sjekker tjenestestatusene og at de fem reponavnene er unike. Den rendrer ikke siden. Det finnes ingen Vitest-konfigurasjon. @vitejs/plugin-react og happy-dom er avhengigheter og blir ikke importert."
+      "summary": "npm test kjører Vitest på src/lib/catalog.test.ts. Den sjekker tjenestestatusene, at de fem reponavnene er unike, og at meldingstekster ikke inneholder vinkelparenteser. Den rendrer ikke siden. Det finnes ingen Vitest-konfigurasjon. @vitejs/plugin-react og happy-dom er avhengigheter og blir ikke importert."
     },
     "build": {
       "name": "Produksjonsbygg",
@@ -69,11 +69,11 @@
     },
     "metadata": {
       "name": "Dokumentmetadata",
-      "summary": "Siden setter en tittel og en beskrivelse fra meldingskatalogen. NEXT_PUBLIC_SITE_URL blir ikke lest. Det finnes ingen kanonisk URL og ingen Open Graph-bilde."
+      "summary": "Siden setter en tittel og en beskrivelse fra meldingskatalogen, og gjentar begge som Open Graph-felt. NEXT_PUBLIC_SITE_URL blir ikke lest. Det finnes ingen kanonisk URL og ingen Open Graph-bilde."
     },
     "ci": {
       "name": "CI-arbeidsflyt",
-      "summary": ".github/workflows/ci.yml kjører på pull requests og på push til main. Den setter opp Node 20, cacher fra package-lock.json, og kjører deretter npm ci, type-check, lint, validate:i18n, test og build. Regler for repositoriet er tomme, og branch protection var ikke lesbar, så en grønn jobb ikke er et bevis på at GitHub blokkerer en fletting."
+      "summary": ".github/workflows/ci.yml kjører på pull requests og på push til main. Den setter opp Node 20, cacher fra package-lock.json, og kjører deretter npm ci, type-check, lint, validate:i18n, test og build. Kjøring 43369219478 bestod 13. november 2026. Regler for repositoriet er tomme, og branch protection var ikke lesbar, så den grønne jobben ikke er et bevis på at GitHub blokkerer en fletting."
     },
     "env": {
       "name": "Miljøplassholdere",

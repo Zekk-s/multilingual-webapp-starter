@@ -25,7 +25,7 @@ export const serviceStatus: Record<ServiceId, Status> = {
   tests: "partial",
   build: "live",
   metadata: "partial",
-  ci: "partial",
+  ci: "live",
   env: "off",
 };
 

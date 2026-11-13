@@ -18,7 +18,8 @@ Scaffold. The home page is the locale desk. Describe the files that are here. Th
 
 - `npm run lint` uses `.eslintrc.json` (`next/core-web-vitals`).
 - `npm test` runs `src/lib/catalog.test.ts` only. `@vitejs/plugin-react` and `happy-dom` are not imported.
-- `.github/workflows/ci.yml` runs `npm ci` from `package-lock.json` on pull requests and on pushes to `main`, with Node 20 and `cache: npm`. Rulesets are empty. Branch protection was not readable here (403). A green job is not proof of a merge block.
+- `.github/workflows/ci.yml` runs `npm ci` from `package-lock.json` on pull requests and on pushes to `main`, with Node 20 and `cache: npm`. Run 43369219478 passed on 13 November 2026. Rulesets are empty. Branch protection was not readable here (403). A green job is not proof of a merge block.
+- Message strings must not contain `<`. `src/lib/catalog.test.ts` fails if one does. `next-intl` would treat it as a tag.
 
 ## Secrets
 

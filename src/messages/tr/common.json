@@ -32,7 +32,7 @@
   "index": {
     "kicker": "Bu hizmetin altında",
     "title": "Altında duranlar",
-    "intro": "Durumlar 13 Kasım 2026 tarihli yerel bir çalıştırmadan, Node 22. Bu değişikliğin GitHub Actions çalıştırması, çekme isteğindeki denetimdir."
+    "intro": "Durumlar 13 Kasım 2026 tarihli yerel bir çalıştırmadan, Node 22. GitHub Actions çalıştırması 43369219478 aynı betikleri geçti."
   },
   "svc": {
     "routing": {
@@ -61,7 +61,7 @@
     },
     "tests": {
       "name": "Birim testleri",
-      "summary": "npm test, Vitest'i src/lib/catalog.test.ts üzerinde çalıştırır. Dosya hizmet durumlarını ve beş repo adının tekil olduğunu denetler. Sayfayı çizmez. Vitest yapılandırması yoktur. @vitejs/plugin-react ve happy-dom bağımlılıktır ve içe aktarılmaz."
+      "summary": "npm test, Vitest'i src/lib/catalog.test.ts üzerinde çalıştırır. Hizmet durumlarını, beş repo adının tekil olduğunu ve mesaj metinlerinde açılı ayraç olmadığını denetler. Sayfayı çizmez. Vitest yapılandırması yoktur. @vitejs/plugin-react ve happy-dom bağımlılıktır ve içe aktarılmaz."
     },
     "build": {
       "name": "Üretim derlemesi",
@@ -69,11 +69,11 @@
     },
     "metadata": {
       "name": "Belge üstverisi",
-      "summary": "Sayfa, mesaj kataloğundan bir başlık ve bir açıklama yazar. NEXT_PUBLIC_SITE_URL okunmaz. Kanonik adres yok, Open Graph görseli yok."
+      "summary": "Sayfa, mesaj kataloğundan bir başlık ve bir açıklama yazar ve ikisini Open Graph alanları olarak yineler. NEXT_PUBLIC_SITE_URL okunmaz. Kanonik adres yok, Open Graph görseli yok."
     },
     "ci": {
       "name": "CI iş akışı",
-      "summary": ".github/workflows/ci.yml çekme isteklerinde ve main'e itişlerde çalışır. Node 20 kurar, package-lock.json üzerinden önbellekler, sonra npm ci, type-check, lint, validate:i18n, test ve build çalıştırır. Depo kural kümeleri boştur ve dal koruması okunamadı, bu yüzden yeşil bir iş GitHub'ın birleştirmeyi engellediğinin kanıtı değildir."
+      "summary": ".github/workflows/ci.yml çekme isteklerinde ve main'e itişlerde çalışır. Node 20 kurar, package-lock.json üzerinden önbellekler, sonra npm ci, type-check, lint, validate:i18n, test ve build çalıştırır. 43369219478 numaralı çalıştırma 13 Kasım 2026'da geçti. Depo kural kümeleri boştur ve dal koruması okunamadı, bu yüzden o yeşil iş GitHub'ın birleştirmeyi engellediğinin kanıtı değildir."
     },
     "env": {
       "name": "Ortam yer tutucuları",

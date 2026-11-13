@@ -12,9 +12,9 @@ The page lists the pieces under that service and a status for each:
 |---|---|
 | Prefixed routing, message catalogs, locale switcher, key parity, type check, lint | Running |
 | Production build | Running, after `setRequestLocale` on the page |
-| Unit tests | Partial. `src/lib/catalog.test.ts` checks the catalog only |
-| Document metadata | Partial. Title and description only. No canonical URL |
-| CI workflow | Partial. `package-lock.json` is committed and `npm ci` is the install step. Rulesets are empty, and branch protection was not readable, so a green job is not a confirmed merge block |
+| Unit tests | Partial. `src/lib/catalog.test.ts` checks the catalog and that message strings have no angle brackets. It does not render the page |
+| Document metadata | Partial. Title, description, and the same two Open Graph fields. No canonical URL and no image |
+| CI workflow | Running. Actions run [43369219478](https://github.com/Zekk-s/multilingual-webapp-starter/actions/runs/43369219478) passed on 13 Nov 2026. Rulesets are empty, and branch protection was not readable, so that green job is not a confirmed merge block |
 | Env placeholders | Not running. `src/` does not read `.env.example` |
 
 Five repos are named on the page. Star counts are from the GitHub API on 12 November 2026. Only `amannn/next-intl` (3.26.0) is installed. `modelcontextprotocol/servers`, `upstash/context7`, `github/github-mcp-server`, and `shadcn-ui/ui` are not dependencies.
@@ -65,11 +65,11 @@ Local run on Node 22, 13 November 2026:
 - `npm run validate:i18n` passes.
 - `npm run type-check` passes.
 - `npm run lint` passes. `.eslintrc.json` extends `next/core-web-vitals`.
-- `npm test` passes. One file, two checks, catalog data only.
+- `npm test` passes. One file: catalog checks, plus a check that message strings have no angle brackets.
 - `npm run build` prerenders `/en`, `/no`, and `/tr`.
 - `npm run dev` on port 5175: `/en`, `/no`, and `/tr` return 200. `/fr` returns 404.
 
-`npm start` was not run.
+`npm start` on port 5175 served the production build. `/en` returned the title, the description, and the same two Open Graph fields. There was no canonical link.
 
 ## License
 
