@@ -6,8 +6,7 @@
   "nav": {
     "home": "Ana sayfa",
     "sections": "Bu sayfada",
-    "service": "Hizmet",
-    "repos": "Repolar"
+    "service": "Hizmet"
   },
   "switcher": { "label": "Dil" },
   "desk": {
@@ -78,31 +77,6 @@
     "env": {
       "name": "Ortam yer tutucuları",
       "summary": ".env.example, NEXT_PUBLIC_SITE_URL ve DEFAULT_LOCALE tanımlar. src altındaki hiçbir dosya onları okumaz. Varsayılan dil, src/i18n.ts içindeki en dizgisidir."
-    }
-  },
-  "picks": {
-    "kicker": "Beş repo",
-    "title": "İşe yarayanlar",
-    "intro": "Bu beş, iskelete değen sınıfların önde gelenleridir: i18n eklentisi, MCP başvuru sunucuları, ajan belgeleri sunucusu, GitHub'ın MCP sunucusu ve bir bileşen takımı. Yıldız sayıları 12 Kasım 2026 GitHub API kaydıdır. Yalnızca next-intl kurulu.",
-    "stars": "GitHub yıldızı",
-    "inRepo": "Kurulu",
-    "notInstalled": "Kurulu değil"
-  },
-  "pick": {
-    "nextIntl": {
-      "why": "Uygulamanın hâlihazırda çalıştırdığı i18n eklentisi. next.config.js onu src/i18n.ts dosyasına bağlar, package.json 3.26.0 sürümünü sabitler. Dil masası onun üstüne kurulu, bu yüzden duruyor."
-    },
-    "mcpServers": {
-      "why": "MCP başvuru sunucuları. Bir ajanın araçları nasıl çağırdığının standart örnekleridir. Bu site onları başlatmaz. Bir Next.js sayfası MCP sunucusu değildir."
-    },
-    "context7": {
-      "why": "Kod ajanları için belgeler, böylece Next.js ve next-intl yanıtları güncel kalır. Sitenin bağımlılığı değildir ve sayfa onu çağırmaz."
-    },
-    "githubMcp": {
-      "why": "Depolar, issue'lar ve çekme istekleri için GitHub'ın resmi MCP sunucusu. Bağımlılık değildir. .github içindeki iş akışı Actions YAML'idir, bu sunucu değil."
-    },
-    "shadcn": {
-      "why": "Projeye kopyalanan bileşenlerin önde gelen takımı. Eklenmedi. Bu sayfa sunucuda üretilen işaretleme ve tek bir istemci seçicisidir. İkinci bir tasarım sistemini kullanacak başka bir şey yok."
     }
   },
   "foot": {

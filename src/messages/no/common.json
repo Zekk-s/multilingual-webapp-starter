@@ -6,8 +6,7 @@
   "nav": {
     "home": "Hjem",
     "sections": "På denne siden",
-    "service": "Tjeneste",
-    "repos": "Repoer"
+    "service": "Tjeneste"
   },
   "switcher": { "label": "Språk" },
   "desk": {
@@ -78,31 +77,6 @@
     "env": {
       "name": "Miljøplassholdere",
       "summary": ".env.example definerer NEXT_PUBLIC_SITE_URL og DEFAULT_LOCALE. Ingen fil under src leser dem. Standardspråket er strengen en i src/i18n.ts."
-    }
-  },
-  "picks": {
-    "kicker": "Fem repoer",
-    "title": "Det som var verdt å bruke",
-    "intro": "Disse fem er de ledende i klassene som berører dette stillaset: i18n-pluginen, referanse-serverne for MCP, en dokumentasjonsserver for agenter, GitHubs MCP-server og et komponentsett. Stjernetallene er fra GitHub-API-et 12. november 2026. Bare next-intl er installert.",
-    "stars": "GitHub-stjerner",
-    "inRepo": "Installert",
-    "notInstalled": "Ikke installert"
-  },
-  "pick": {
-    "nextIntl": {
-      "why": "i18n-pluginen appen allerede kjører. next.config.js peker den til src/i18n.ts, og package.json fester 3.26.0. Språkpulten er bygget på den, så den blir."
-    },
-    "mcpServers": {
-      "why": "Referanse-serverne for MCP. De er standardeksemplene på hvordan en agent kaller verktøy. Dette nettstedet starter dem ikke. En Next.js-side er ikke en MCP-vert."
-    },
-    "context7": {
-      "why": "Dokumentasjon for kodeagenter, så svar om Next.js og next-intl holder seg aktuelle. Den er ikke en avhengighet av nettstedet, og siden kaller den ikke."
-    },
-    "githubMcp": {
-      "why": "GitHubs offisielle MCP-server for repositorier, issues og pull requests. Den er ikke en avhengighet. Arbeidsflyten i .github er Actions-YAML, ikke denne serveren."
-    },
-    "shadcn": {
-      "why": "Det ledende settet med komponenter du kopierer inn i et prosjekt. Det ble ikke lagt til. Denne siden er server-rendret markup pluss én klientvelger. Et annet designsystem ville ikke hatt noe annet som brukte det."
     }
   },
   "foot": {

@@ -12,7 +12,6 @@ Scaffold. The home page is the locale desk. Describe the files that are here. Th
 - `LocaleSwitcher` prints the locale codes. It is the only client component.
 - `.env.example` is not imported by `src/`.
 - `.github/CODEOWNERS` is `* @Zekiog`.
-- `.cursor/skills/locale-desk/SKILL.md` is the project skill for this page. It is not loaded into an agent session that started before the file existed.
 
 ## What is partial or not running
 
@@ -27,4 +26,4 @@ Do not commit secrets. `.gitignore` ignores `.env`, `.env.local`, `.env.developm
 
 A new locale needs a new code in `src/i18n.ts` and a `common.json` with the same keys as `en`. The parity script checks keys only.
 
-Do not add `modelcontextprotocol/servers`, `upstash/context7`, `github/github-mcp-server`, or `shadcn-ui/ui` as dependencies unless `src/lib/catalog.ts` and the page copy say they are installed. Only `next-intl` is.
+Do not add `modelcontextprotocol/servers`, `upstash/context7`, `github/github-mcp-server`, or `shadcn-ui/ui` as dependencies. Only `next-intl` is.

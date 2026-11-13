@@ -1,7 +1,7 @@
 import { readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
-import { picks, serviceIds, serviceStatus } from "./catalog";
+import { serviceIds, serviceStatus } from "./catalog";
 
 const textValues = (value: unknown): string[] => {
   if (typeof value === "string") return [value];
@@ -16,14 +16,6 @@ describe("catalog", () => {
     for (const id of serviceIds) {
       expect(["live", "partial", "off"]).toContain(serviceStatus[id]);
     }
-  });
-
-  it("lists five distinct repos and installs only next-intl", () => {
-    const repos = picks.map((pick) => pick.repo);
-    expect(new Set(repos).size).toBe(picks.length);
-    expect(picks.filter((pick) => pick.inRepo).map((pick) => pick.repo)).toEqual([
-      "amannn/next-intl",
-    ]);
   });
 
   it("keeps angle brackets out of message strings", () => {

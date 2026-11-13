@@ -17,8 +17,6 @@ The page lists the pieces under that service and a status for each:
 | CI workflow | Running. Actions run [43369219478](https://github.com/Zekk-s/multilingual-webapp-starter/actions/runs/43369219478) passed on 13 Nov 2026. Rulesets are empty, and branch protection was not readable, so that green job is not a confirmed merge block |
 | Env placeholders | Not running. `src/` does not read `.env.example` |
 
-Five repos are named on the page. Star counts are from the GitHub API on 12 November 2026. Only `amannn/next-intl` (3.26.0) is installed. `modelcontextprotocol/servers`, `upstash/context7`, `github/github-mcp-server`, and `shadcn-ui/ui` are not dependencies.
-
 ## Files
 
 ```
@@ -37,7 +35,6 @@ src/app/layout.tsx
 src/app/[locale]/layout.tsx
 src/app/[locale]/page.tsx
 src/components/LocaleSwitcher.tsx
-src/components/RepoPicks.tsx
 src/components/ServiceIndex.tsx
 src/i18n.ts
 src/lib/catalog.ts
@@ -47,7 +44,6 @@ src/messages/no/common.json
 src/messages/tr/common.json
 src/middleware.ts
 tsconfig.json
-.cursor/skills/locale-desk/SKILL.md
 .github/CODEOWNERS
 .github/ISSUE_TEMPLATE/bug_report.yml
 .github/ISSUE_TEMPLATE/feature_request.yml

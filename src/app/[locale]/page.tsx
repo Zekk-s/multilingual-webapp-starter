@@ -1,8 +1,7 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { LocaleSwitcher } from "@/components/LocaleSwitcher";
-import { RepoPicks } from "@/components/RepoPicks";
 import { ServiceIndex } from "@/components/ServiceIndex";
-import { serviceIds, serviceStatus, type PickId } from "@/lib/catalog";
+import { serviceIds, serviceStatus } from "@/lib/catalog";
 import { locales, type Locale } from "@/i18n";
 
 export async function generateMetadata({ params }: { params: { locale: string } }) {
@@ -26,8 +25,6 @@ export default async function HomePage({ params }: { params: { locale: string } 
   const index = await getTranslations("index");
   const svc = await getTranslations("svc");
   const status = await getTranslations("status");
-  const picks = await getTranslations("picks");
-  const pick = await getTranslations("pick");
   const foot = await getTranslations("foot");
 
   const rows = serviceIds.map((id, position) => ({
@@ -38,14 +35,6 @@ export default async function HomePage({ params }: { params: { locale: string } 
     statusLabel: status(serviceStatus[id]),
     tone: serviceStatus[id],
   }));
-
-  const why = {
-    nextIntl: pick("nextIntl.why"),
-    mcpServers: pick("mcpServers.why"),
-    context7: pick("context7.why"),
-    githubMcp: pick("githubMcp.why"),
-    shadcn: pick("shadcn.why"),
-  } satisfies Record<PickId, string>;
 
   const steps = [
     ["01", path("request")],
@@ -65,7 +54,6 @@ export default async function HomePage({ params }: { params: { locale: string } 
           </a>
           <nav className="jump" aria-label={nav("sections")}>
             <a href="#service">{nav("service")}</a>
-            <a href="#repos">{nav("repos")}</a>
           </nav>
           <LocaleSwitcher />
         </div>
@@ -95,18 +83,6 @@ export default async function HomePage({ params }: { params: { locale: string } 
           title={index("title")}
           intro={index("intro")}
           rows={rows}
-        />
-        <RepoPicks
-          locale={params.locale}
-          copy={{
-            kicker: picks("kicker"),
-            title: picks("title"),
-            intro: picks("intro"),
-            stars: picks("stars"),
-            inRepo: picks("inRepo"),
-            notInstalled: picks("notInstalled"),
-            why,
-          }}
         />
       </main>
       <footer className="wrap foot">

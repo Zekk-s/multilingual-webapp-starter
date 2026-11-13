@@ -6,8 +6,7 @@
   "nav": {
     "home": "Home",
     "sections": "On this page",
-    "service": "Service",
-    "repos": "Repos"
+    "service": "Service"
   },
   "switcher": { "label": "Language" },
   "desk": {
@@ -78,31 +77,6 @@
     "env": {
       "name": "Env placeholders",
       "summary": ".env.example defines NEXT_PUBLIC_SITE_URL and DEFAULT_LOCALE. No file under src reads them. The default locale is the string en in src/i18n.ts."
-    }
-  },
-  "picks": {
-    "kicker": "Five repos",
-    "title": "What was worth using",
-    "intro": "These five are the class leaders that touch this scaffold: the i18n plugin, the MCP reference servers, an agent-docs server, GitHub's MCP server, and a component kit. Star counts are from the GitHub API on 12 November 2026. Only next-intl is installed.",
-    "stars": "GitHub stars",
-    "inRepo": "Installed",
-    "notInstalled": "Not installed"
-  },
-  "pick": {
-    "nextIntl": {
-      "why": "The i18n plugin this app already runs. next.config.js points it at src/i18n.ts, and package.json pins 3.26.0. The locale desk is built on it, so it stays."
-    },
-    "mcpServers": {
-      "why": "The reference MCP servers. They are the standard examples of how an agent calls tools. This site does not start them. A Next.js page is not an MCP host."
-    },
-    "context7": {
-      "why": "Documentation for coding agents, so answers about Next.js and next-intl stay current. It is not a dependency of this site, and the page does not call it."
-    },
-    "githubMcp": {
-      "why": "GitHub's official MCP server for repositories, issues, and pull requests. It is not a dependency. The workflow in .github is Actions YAML, not this server."
-    },
-    "shadcn": {
-      "why": "The leading set of components you copy into a project. It was not added. This page is server-rendered markup plus one client switcher. A second design system would have nothing else using it."
     }
   },
   "foot": {
